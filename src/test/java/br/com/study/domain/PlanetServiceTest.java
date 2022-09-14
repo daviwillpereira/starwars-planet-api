@@ -48,10 +48,12 @@ class PlanetServiceTest {
 	}
 	
 	@Test
-	public void createPlanet_WithInvalidData_ThrowsException() {
+	void createPlanet_WithInvalidData_ThrowsException() {
 		when(planetRepository.save(INVALID_PLANET)).thenThrow(RuntimeException.class);
 		
 		assertThatThrownBy(() -> planetService.create(INVALID_PLANET)).isInstanceOf(RuntimeException.class);
 	}
+	
+	
 
 }
